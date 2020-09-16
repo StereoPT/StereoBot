@@ -1,0 +1,22 @@
+{
+  "name": "stereo-bot",
+  "version": "1.0.0",
+  "description": "Stereo Hangout Custom Bot",
+  "main": "app.js",
+  "scripts": {
+    "bot": "nodemon -r esm -r dotenv/config app.js --ignore *.json"
+  },
+  "keywords": [],
+  "author": "StereoPT",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "discord.js": "^12.2.0",
+    "dotenv": "^8.2.0",
+    "esm": "^3.2.25"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
