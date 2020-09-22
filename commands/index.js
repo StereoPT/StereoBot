@@ -1,6 +1,5 @@
 module.exports = {
-    Weather: require('./weather'),
-    Randomize: require('./randomize'),
-    Covid: require('./covid'),
-    Horario: require('./horario')
+  Weather: require('./weather'),
+  Randomize: require('./randomize'),
+  Horario: require('./horario')
 };

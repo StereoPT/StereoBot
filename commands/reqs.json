@@ -1,44 +1,44 @@
 {
-    "getLoginPage": {
-        "method": "GET",
-        "rejectUnauthorized": false,
-        "url": "https://gisem.dei.estg.ipleiria.pt/login",
-        "headers": {
-            "User-Agent": "",
-            "Accept": "*/*",
-            "Cache-Control": "no-cache",
-            "Host": "gisem.dei.estg.ipleiria.pt",
-            "Accept-Encoding": "gzip, deflate",
-            "Connection": "keep-alive"
-        }
-    },
-    "postToLogin": {
-        "method": "POST",
-        "rejectUnauthorized": false,
-        "url": "https://gisem.dei.estg.ipleiria.pt/login",
-        "headers": {
-            "Content-Type": "application/x-www-form-urlencoded",
-            "User-Agent": "",
-            "Accept": "*/*",
-            "Cache-Control": "no-cache",
-            "Host": "gisem.dei.estg.ipleiria.pt",
-            "Accept-Encoding": "gzip, deflate",
-            "Connection": "keep-alive"
-        }
-    },
-    "getHorarios": {
-        "method": "GET",
-        "rejectUnauthorized": false,
-        "url": "https://gisem.dei.estg.ipleiria.pt/getTurnosFromUser/authUser",
-        "headers": {
-            "Content-Type": "application/x-www-form-urlencoded",
-            "User-Agent": "",
-            "Accept": "*/*",
-            "Cache-Control": "no-cache",
-            "Host": "gisem.dei.estg.ipleiria.pt",
-            "Accept-Encoding": "gzip, deflate",
-            "Connection": "keep-alive",
-            "X-Requested-With": "XMLHttpRequest"
-        }
+  "getLoginPage": {
+    "method": "GET",
+    "rejectUnauthorized": false,
+    "url": "https://gisem.dei.estg.ipleiria.pt/login",
+    "headers": {
+      "User-Agent": "",
+      "Accept": "*/*",
+      "Cache-Control": "no-cache",
+      "Host": "gisem.dei.estg.ipleiria.pt",
+      "Accept-Encoding": "gzip, deflate",
+      "Connection": "keep-alive"
     }
+  },
+  "postToLogin": {
+    "method": "POST",
+    "rejectUnauthorized": false,
+    "url": "https://gisem.dei.estg.ipleiria.pt/login",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "",
+      "Accept": "*/*",
+      "Cache-Control": "no-cache",
+      "Host": "gisem.dei.estg.ipleiria.pt",
+      "Accept-Encoding": "gzip, deflate",
+      "Connection": "keep-alive"
+    }
+  },
+  "getHorarios": {
+    "method": "GET",
+    "rejectUnauthorized": false,
+    "url": "https://gisem.dei.estg.ipleiria.pt/getTurnosFromUser/authUser",
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "",
+      "Accept": "*/*",
+      "Cache-Control": "no-cache",
+      "Host": "gisem.dei.estg.ipleiria.pt",
+      "Accept-Encoding": "gzip, deflate",
+      "Connection": "keep-alive",
+      "X-Requested-With": "XMLHttpRequest"
+    }
+  }
 }
