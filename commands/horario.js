@@ -5,14 +5,19 @@ import { getDay, getWeek } from 'date-fns';
 import { colors } from '../lib/config.json';
 const reqs = require('./reqs.json');
 
-//Ask this Later!
-const username = '2191860';
-const password = 'Yl)1$Nx27';
-
 module.exports = {
     name: 'horario',
     description: 'EID Horario Module!',
     async execute(bot, msg, args) {
+      msg.delete();
+
+      if(args.length < 2) {
+        return msg.channel.send('Username or Password Missing!');
+      }
+
+      const username = args[0];
+      const password = args[1];
+
       try {
         request(reqs.getLoginPage, (err, res, html) => {
           if(!err && res.statusCode == 200) {
@@ -27,12 +32,12 @@ module.exports = {
                 reqs.getHorarios["X-CSRF-TOKEN"] = token;
                 reqs.getHorarios.headers["Cookie"] = res.headers["set-cookie"];
                               
-                request(reqs.getHorarios, (err, res, html) => {
+                request(reqs.getHorarios, async (err, res, html) => {
                   if(!err) {
                     const weekDay = getDay(new Date()) + 1;
                     const myClasses = JSON.parse(html).filter(iClass => iClass.diaSemana == weekDay);
                     const sortedClasses = myClasses.sort((a, b) => a.horaInicio > b.horaInicio ? 1 : -1)
-                    displayClasses(msg, sortedClasses);
+                    await displayClasses(msg, sortedClasses);
                   }
                 });
               }
@@ -45,7 +50,7 @@ module.exports = {
     },
 };
 
-function displayClasses(msg, myClasses) {
+async function displayClasses(msg, myClasses) {
   const weekYear = getWeek(new Date());
 
   let classReport = { embed: {
@@ -58,19 +63,18 @@ function displayClasses(msg, myClasses) {
     }
   }};
 
-  myClasses.map((iClass) => {
-    let week = iClass.semanas.substring(1).split(' ')[0].split(':');
-    if(weekYear >= week[0] && weekYear <= week[1]) {
+  for(const iClass of myClasses) {
+    //let week = iClass.semanas.substring(1).split('; ')[0].split(':');
+    //if(weekYear >= week[0] && weekYear <= week[1]) {
       let field = {
         name: `Aula: ${iClass.nomeUC} - ${iClass.tipoTurno}`,
         value: `**Horario:** ${iClass.horaInicio} - ${iClass.horaFim}\n` +
-               `**Sala:** ${iClass.sala}\n` +
-               `**Professor:** ${iClass.professor}`
+                `**Sala:** ${iClass.sala}\n` +
+                `**Professor:** ${iClass.professor}`
       }
-
       classReport.embed.fields.push(field);
-    }
-  });
+    //}
+  }
 
-  msg.channel.send(classReport);
+  return msg.channel.send(classReport)
 }
