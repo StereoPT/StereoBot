@@ -15,7 +15,7 @@ export function error(msg, myEmbed) {
   msg.channel.send({
     embed: {
       color: colors.error,
-      description: myEmbed.description
+      description: "**[ERROR]** " + myEmbed.description
     }
   });
 }

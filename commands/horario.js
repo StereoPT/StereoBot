@@ -4,7 +4,7 @@ import { getDay, getWeek } from 'date-fns';
 import { help, error } from '../helpers/helperFunctions';
 
 import { colors } from '../lib/config.json';
-const reqs = require('./reqs.json');
+const reqs = require('../lib/reqs.json');
 
 const horarioHelper = {
   title: '[StereoBot] Horario Help',
@@ -26,7 +26,7 @@ module.exports = {
     msg.delete();
     
     if (args.length < 2) {
-      return error(msg, { description: '**[ERROR]** Username or Password Missing!' });
+      return error(msg, { description: 'Username or Password Missing!' });
     }
 
     const username = args[0];

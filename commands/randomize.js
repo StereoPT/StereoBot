@@ -1,7 +1,5 @@
 import { help, error } from '../helpers/helperFunctions';
 
-import { colors } from '../lib/config.json';
-
 const randomizeHelp = {
   title: "[StereoBot] Randomize Help",
   description: 'Comando utilizado para alterar a cor de um ou todos os membros do Servidor',
@@ -19,7 +17,7 @@ module.exports = {
     }
 
     if (!msg.channel.permissionsFor(msg.guild.member(msg.author)).has('MANAGE_ROLES')) {
-      return error(msg, { description: "**[ERROR]** Não tens **Permissões** sufecientes para utilizar esse comando!" });
+      return error(msg, { description: "Não tens **Permissões** sufecientes para utilizar esse comando!" });
     }
 
     let toRandomize = msg.mentions.users.first();

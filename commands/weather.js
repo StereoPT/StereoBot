@@ -26,7 +26,7 @@ module.exports = {
     let found = data.find(({ local }) => local.toLowerCase() === arg.toLowerCase());
 
     if (!found) {
-      return error(msg, { description: "**[ERROR]** Invalid Location!" });
+      return error(msg, { description: "Invalid Location!" });
     }
 
     axios.get(weatherURL + found.globalIdLocal + ".json").then(({ data }) => {
