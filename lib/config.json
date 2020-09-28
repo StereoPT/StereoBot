@@ -1,6 +1,8 @@
 {
   "colors": {
     "weather": "#20c4f4",
+    "horario": "#3379b7",
+    "rate": "#5433b7",
     "error": "#ff3333",
     "help": "#33ff33"
   }

@@ -69,7 +69,7 @@ async function displayClasses(msg, myClasses) {
 
   let classReport = {
     embed: {
-      color: colors.weather,
+      color: colors.horario,
       title: `[StereoBot] Aulas para Hoje`,
       fields: [],
       timestamp: new Date(),
