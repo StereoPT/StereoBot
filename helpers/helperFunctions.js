@@ -1,7 +1,7 @@
 import { colors } from '../lib/config.json';
 
 export function help(msg, myEmbed) {
-  msg.channel.send({
+  return msg.channel.send({
     embed: {
       color: colors.help,
       title: myEmbed.title,
@@ -12,7 +12,7 @@ export function help(msg, myEmbed) {
 }
 
 export function error(msg, myEmbed) {
-  msg.channel.send({
+  return msg.channel.send({
     embed: {
       color: colors.error,
       description: "**[ERROR]** " + myEmbed.description
