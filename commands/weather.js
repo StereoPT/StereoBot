@@ -17,6 +17,7 @@ const weatherHelp = {
 module.exports = {
   name: 'weather',
   description: 'Weather Module!',
+  enable: true,
   execute(bot, msg, args) {
     if (args[0] && args[0].toLowerCase() === 'help') {
       return help(msg, weatherHelp);

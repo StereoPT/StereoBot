@@ -18,6 +18,7 @@ const horarioHelper = {
 module.exports = {
   name: 'horario',
   description: 'EID Horario Module!',
+  enable: true,
   async execute(bot, msg, args) {
     if (args[0] && args[0].toLowerCase() === 'help') {
       return help(msg, horarioHelper);

@@ -13,6 +13,7 @@ const rateHelper = {
 module.exports = {
   name: 'rate',
   description: 'Rate Module!',
+  enable: false,
   execute(bot, msg, args) {
     if (args[0] && args[0].toLowerCase() === 'help') {
       return help(msg, rateHelper);

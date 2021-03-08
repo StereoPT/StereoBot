@@ -11,6 +11,7 @@ const randomizeHelp = {
 module.exports = {
   name: 'randomize',
   description: 'Randomize Module!',
+  enable: false,
   execute(bot, msg, args) {
     if (args[0] && args[0].toLowerCase() === 'help') {
       return help(msg, randomizeHelp);

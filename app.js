@@ -6,7 +6,9 @@ bot.commands = new Collection();
 import botCommands from './commands';
 
 Object.keys(botCommands).map((key) => {
-  bot.commands.set(botCommands[key].name, botCommands[key]);
+  if(botCommands[key].enable === true) {
+    bot.commands.set(botCommands[key].name, botCommands[key]);
+  }
 });
 
 bot.login(process.env.TOKEN);
